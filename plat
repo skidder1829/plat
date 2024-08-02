@@ -10,7 +10,7 @@ if whitelistScript then
     local success, whitelist = pcall(loadstring(whitelistScript))
     if success then
         local player = game.Players.LocalPlayer
-        local isWhitelisted = false
+        local isWhitelisted = true
 
         for _, name in ipairs(whitelist) do
             if player.Name == name then
