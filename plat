@@ -89,13 +89,13 @@ local TargetAimSection = AimingTab:CreateSector("Target Aim", "right")
 
 
 getgenv().HitPart = "HumanoidRootPart"
-getgenv().Prediction_SilentAim = 0.155
-getgenv().SilentAimEnabled = true  -- Default to disabled
-getgenv().SilentAimShowFOV = false  -- Default to showing FOV
+getgenv().Prediction_SilentAim = 0.1
+getgenv().SilentAimEnabled = false  -- Default to disabled
+getgenv().SilentAimShowFOV = true  -- Default to showing FOV
 
 getgenv().SilentAimFOVSize = 150
-getgenv().SilentAimFOVTransparency = 0.6
-getgenv().SilentAimFOVThickness = 0.6
+getgenv().SilentAimFOVTransparency = 1
+getgenv().SilentAimFOVThickness = 2.0
 getgenv().SilentAimFOVColor = Color3.new(255, 0, 0)
 
 local SilentAimFOVCircle = Drawing.new("Circle")
@@ -1083,3 +1083,53 @@ enableDrag(outerFrame)
 
 
 
+local toggleShow360GUI = OthersSection:AddToggle("360 button", false, function(enabled)
+    screenGui.Enabled = enabled
+end)
+
+
+
+
+local TeleportSection = MiscTab:CreateSector("Teleports", "left") -- Renamed section for clarity
+TeleportSection:AddButton("Uphill Guns", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(481.3045959472656, 48.07050323486328, -620.1513671875)
+end)
+TeleportSection:AddButton("Downhill Guns", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-578.5796508789062, 8.314779281616211, -736.3884887695312)
+end)
+TeleportSection:AddButton("Hood fitness", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-76.4957275390625, 22.700284957885742, -630.9816284179688)
+end)
+TeleportSection:AddButton("Bank", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-432.1439208984375, 38.9649658203125, -284.1016540527344)
+end)
+TeleportSection:AddButton("Bar", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264.5504455566406, 48.52669143676758, -446.29254150390625)
+end)
+TeleportSection:AddButton("Da furniture", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-489.1640319824219, 21.8498477935791, -76.60957336425781)
+end)
+TeleportSection:AddButton("Da casino", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-863.4664306640625, 21.59995460510254, -152.92788696289062)
+end)
+TeleportSection:AddButton("School", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-531.3531494140625, 21.74999237060547, 252.47506713867188)
+end)
+TeleportSection:AddButton("Da Theatre", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1004.9942626953125, 25.10002326965332, -135.17315673828125)
+end)
+TeleportSection:AddButton("FoodsMart", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-906.5833740234375, 22.005002975463867, -653.2225952148438)
+end)
+TeleportSection:AddButton("Basketball Court", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-896.5643310546875, 21.999818801879883, -528.7317504882812)
+end)
+TeleportSection:AddButton("Military", function(enabled)
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-50.412960052490234, 25.25499725341797, -868.921142578125)
+end)
+
+
+
+
+local ConfigsTab = Window:CreateTab("Configs")
+ConfigsTab:CreateConfigSystem("right") --this is the config system 
