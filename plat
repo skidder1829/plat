@@ -1,33 +1,3 @@
-local whitelistScriptURL = "https://pastebin.com/raw/3GbwBFJ9"
-local kickMessage = "You are not whitelisted, Please buy this script"  -- Customize your kick message here
-
-local function kickPlayer(message)
-    game.Players.LocalPlayer:Kick(message)
-end
-
-local whitelistScript = game:HttpGetAsync(whitelistScriptURL)
-if whitelistScript then
-    local success, whitelist = pcall(loadstring(whitelistScript))
-    if success then
-        local player = game.Players.LocalPlayer
-        local isWhitelisted = true
-
-        for _, name in ipairs(whitelist) do
-            if player.Name == name then
-                isWhitelisted = true
-                break
-            end
-        end
-
-        if not isWhitelisted then
-            kickPlayer(kickMessage)
-        end
-    else
-        warn("Failed to execute script:", whitelist)
-    end
-else
-    warn("Failed to fetch :", whitelistScriptURL)
-end
 wait(0.05)
 local blur = Instance.new("BlurEffect", game.Lighting)
 blur.Size = 0
